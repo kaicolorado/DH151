@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello World</title>
+	<title>My Family Map</title>
 	<meta charset="utf-8" />
 
 	<!-- style sheets -->
@@ -15,10 +15,10 @@
 <body>
 
 	<div class="header">
-		My World
+		My Family Map
 	</div>
 	<div class="sidebar">
-		My Sidebar
+		This map displays a number of locations that members of my family and I have lived.
 	</div>
 	<div class="content">
 		<div id="map"></div>
@@ -31,10 +31,41 @@
 			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
 
-		var marker = L.marker([34.0697,-118.4432]).addTo(map)
-				.bindPopup('The Technology Sandbox<br> Where Yoh is sitting this very moment')
+
+        let data = [
+	      {
+    		'title':'Lambda Chi Alpha: Where I currently live',
+	    	'lat': 34.0679842,
+		    'lon': -118.4491570
+	    },  
+	    {
+		    'title':'My House in San Diego: Where my parents currently live',
+		    'lat': 32.8343872,
+		    'lon': -117.0900217
+	    },
+    	{
+		    'title':'Santa Rosa: Where my dad grew up',
+    		'lat': 38.4507486,
+	    	'lon': -122.7478461
+	    },
+    	{
+	    	'title':'San Bruno: Where my mom grew up',
+    		'lat': 37.6206578,
+	    	'lon': -122.4194064
+	    },
+    	{
+    		'title':'SDSU: Where my parents met',
+	    	'lat': 32.7746470,
+		    'lon': -117.0715014
+	    }
+]
+        data.forEach(function(item){
+            var marker = L.marker([item.lat,item.lon]).addTo(map)
+				.bindPopup(item.title)
 				.openPopup();	
 
+        });
+        
 	</script>
 
 
