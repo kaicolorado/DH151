@@ -19,13 +19,18 @@ body {
 
 .header {
 	grid-area: header;
-	padding:10px;
+	padding:20px;
     background-color: rgb(80, 144, 155);
+	font-size: 200%;
+	text-align: center;
+	font-family: Franklin;
 } 
 .sidebar {
 	grid-area: sidebar;
 	padding:10px;
     background-color: rgb(197, 149, 77);
+	font-family: Franklin;
+	text-align: center;
 }
 .content {
 	grid-area: content;
