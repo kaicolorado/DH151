@@ -45,7 +45,6 @@ let data = [
             var marker = L.marker([item.lat,item.lon])
 				.bindPopup(item.desc)
 				
-				
 
 				myMarkers.addLayer(marker);
 
