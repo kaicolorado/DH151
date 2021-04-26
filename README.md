@@ -4,3 +4,5 @@
 [Week 2 Lab](Week%202/index.html)
 <br>
 [Week 3 Lab](Week%203/index.html)
+<br>
+[Week 4 Lab](Week%204/index.html)
