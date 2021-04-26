@@ -1,9 +1,9 @@
 // Global variables
 let map;
-let lat = 0;
-let lon = 0;
-let zl = 3;
-let path = "data/dunitz.csv";
+let lat = 34.0697;
+let lon = -100.4432;
+let zl = 6;
+let path = "data/storymap.csv";
 let markers = L.featureGroup();
 
 // initialize
@@ -51,10 +51,14 @@ function mapCSV(data){
         let marker = L.circleMarker([item.latitude, item.longitude], circleOptions)
 
         .on('mouseover',function(){
-			this.bindPopup(`${item.title}<br><img src="${item.thumbnail_url}">`).openPopup()
+			this.bindPopup(`${item.title}<br><img src="${item.thumbnail_url}" width="200px">`).openPopup()
 		})
 
+		// add marker to featuregroup
+
         markers.addLayer(marker)
+
+		$('.sidebar').append(`<img src="${item.thumbnail_url}" onmouseover="map.panTo([${item.latitude},${item.longitude}])" width="200px">`)
 })
 
 markers.addTo(map);
